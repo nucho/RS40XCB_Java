@@ -1,4 +1,4 @@
-import RS40XCB.RS40XCB;
+import RS40XCB_Java.RS40XCB;
 
 // author: atsushi egashira
 // license: LGPLv3

@@ -1,4 +1,4 @@
-package RS40XCB;
+package RS40XCB_Java;
 // author: atsushi egashira
 // license: LGPLv3
 
