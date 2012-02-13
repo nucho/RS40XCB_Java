@@ -2,6 +2,7 @@ package RS40XCB_Java;
 
 // author: atsushi egashira
 // license: LGPLv3
+//license: LGPLv3
 
 import java.io.IOException;
 
