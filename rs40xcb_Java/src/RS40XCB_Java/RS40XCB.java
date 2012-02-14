@@ -2,7 +2,7 @@ package RS40XCB_Java;
 
 // author: atsushi egashira
 // license: LGPLv3
-//license: LGPLv3
+
 
 import java.io.IOException;
 
@@ -126,7 +126,9 @@ public class RS40XCB {
 	 */
 	public int getAngle(int sId) {
 		this.getParam(sId);
-		return ((readbuf[8] << 8) & 0x0000FF00) | (readbuf[7] & 0x000000FF);
+		
+		return (((readbuf[8] << 24) & 0xFF000000) | ((readbuf[7]<<16) & 0x00FF0000)) >> 16;
+		//return ((readbuf[8] << 8) & 0x0000FF00) | (readbuf[7] & 0x000000FF);
 	}
 
 	/**
@@ -139,7 +141,8 @@ public class RS40XCB {
 	 */
 	public int getTime(int sId) {
 		this.getParam(sId);
-		return ((readbuf[10] << 8) & 0x0000FF00) | (readbuf[9] & 0x000000FF);
+		return (((readbuf[10] << 24) & 0xFF000000) | ((readbuf[9]<<16) & 0x00FF0000)) >> 16;
+		//return ((readbuf[10] << 8) & 0x0000FF00) | (readbuf[9] & 0x000000FF);
 	}
 
 	/**
@@ -152,7 +155,8 @@ public class RS40XCB {
 	 */
 	public int getSpeed(int sId) {
 		this.getParam(sId);
-		return ((readbuf[12] << 8) & 0x0000FF00) | (readbuf[11] & 0x000000FF);
+		return (((readbuf[12] << 24) & 0xFF000000) | ((readbuf[11]<<16) & 0x00FF0000)) >> 16;
+//		return ((readbuf[12] << 8) & 0x0000FF00) | (readbuf[11] & 0x000000FF);
 	}
 
 	/**
@@ -164,7 +168,8 @@ public class RS40XCB {
 	 */
 	public int getLoad(int sId) {
 		this.getParam(sId);
-		return ((readbuf[14] << 8) & 0x0000FF00) | (readbuf[13] & 0x000000FF);
+		return (((readbuf[14] << 24) & 0xFF000000) | ((readbuf[13]<<16) & 0x00FF0000)) >> 16;
+//		return ((readbuf[14] << 8) & 0x0000FF00) | (readbuf[13] & 0x000000FF);
 	}
 
 	/**
@@ -179,7 +184,8 @@ public class RS40XCB {
 	 */
 	public int getTemperature(int sId) {
 		this.getParam(sId);
-		return ((readbuf[16] << 8) & 0x0000FF00) | (readbuf[15] & 0x000000FF);
+		return (((readbuf[16] << 24) & 0xFF000000) | ((readbuf[15]<<16) & 0x00FF0000)) >> 16;
+//		return ((readbuf[16] << 8) & 0x0000FF00) | (readbuf[15] & 0x000000FF);
 	}
 
 	/**
@@ -192,7 +198,8 @@ public class RS40XCB {
 	 */
 	public int getVoltage(int sId) {
 		this.getParam(sId);
-		return ((readbuf[18] << 8) & 0x0000FF00) | (readbuf[17] & 0x000000FF);
+		return (((readbuf[18] << 24) & 0xFF000000) | ((readbuf[17]<<16) & 0x00FF0000)) >> 16;
+//		return ((readbuf[18] << 8) & 0x0000FF00) | (readbuf[17] & 0x000000FF);
 	}
 
 	private void getParam(int sId) {
