@@ -128,7 +128,6 @@ public class RS40XCB {
 		this.getParam(sId);
 		
 		return (((readbuf[8] << 24) & 0xFF000000) | ((readbuf[7]<<16) & 0x00FF0000)) >> 16;
-		//return ((readbuf[8] << 8) & 0x0000FF00) | (readbuf[7] & 0x000000FF);
 	}
 
 	/**
@@ -142,7 +141,6 @@ public class RS40XCB {
 	public int getTime(int sId) {
 		this.getParam(sId);
 		return (((readbuf[10] << 24) & 0xFF000000) | ((readbuf[9]<<16) & 0x00FF0000)) >> 16;
-		//return ((readbuf[10] << 8) & 0x0000FF00) | (readbuf[9] & 0x000000FF);
 	}
 
 	/**
@@ -202,6 +200,15 @@ public class RS40XCB {
 //		return ((readbuf[18] << 8) & 0x0000FF00) | (readbuf[17] & 0x000000FF);
 	}
 
+	/**
+	 * This function will close the serial port.
+	 * 
+	 */
+	public void close()
+	{
+		serial.dispose();
+	}
+	
 	private void getParam(int sId) {
 		byte sum;
 

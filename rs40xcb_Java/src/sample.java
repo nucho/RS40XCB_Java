@@ -36,6 +36,8 @@ public class sample {
 			e.printStackTrace();
 		}
 		System.out.println("Angle:"+servo.getAngle(sID));
+		
+		servo.close();
 	}
 
 }
